@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Константин Ушаков — руководитель разработки на Битрикс24</title>
+<meta name="description" content="Константин Ушаков — руководитель разработки на Битрикс24. Опыт с 2010 года, управление командами, интеграции, агентная разработка с ИИ.">
+<link rel="canonical" href="https://makedev.ru/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230F1115'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%23F5A524'%3E~/%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0F1115">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://makedev.ru/">
+<meta property="og:title" content="Константин Ушаков — руководитель разработки на Битрикс24">
+<meta property="og:description" content="Константин Ушаков — руководитель разработки на Битрикс24. Опыт с 2010 года, управление командами, интеграции, агентная разработка с ИИ.">
+<meta property="og:image" content="https://makedev.ru/photo.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<style>
+@font-face{font-family:'IBM Plex Sans';font-weight:400;font-display:swap;src:url(fonts/ibm-plex-sans-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'IBM Plex Sans';font-weight:400;font-display:swap;src:url(fonts/ibm-plex-sans-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans';font-weight:500;font-display:swap;src:url(fonts/ibm-plex-sans-cyrillic-500-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'IBM Plex Sans';font-weight:500;font-display:swap;src:url(fonts/ibm-plex-sans-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;font-display:swap;src:url(fonts/ibm-plex-sans-cyrillic-600-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;font-display:swap;src:url(fonts/ibm-plex-sans-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'JetBrains Mono';font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-cyrillic-500-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'JetBrains Mono';font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-weight:700;font-display:swap;src:url(fonts/jetbrains-mono-cyrillic-700-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'JetBrains Mono';font-weight:700;font-display:swap;src:url(fonts/jetbrains-mono-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0F1115}
+a{color:#E8EAED}a:hover{color:#FFFFFF}
+summary{cursor:pointer}
+@media (max-width:600px){#contacts{padding:28px 20px !important}}
+</style>
+</head>
+<body>
+
+<div style="min-height: 100vh; background: #0F1115; color: #E8EAED; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.6">
+
+  <header style="border-bottom: 1px solid #262C35">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#top" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; text-decoration: none; color: #E8EAED"><span style="color: #F5A524">~/</span>makedev.ru</a>
+      <nav aria-label="Разделы" style="display: flex; flex-wrap: wrap; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px">
+        <a href="#experience" style="text-decoration: none; color: #9AA3AE">опыт</a>
+        <a href="#skills" style="text-decoration: none; color: #9AA3AE">навыки</a>
+        <a href="#contacts" style="text-decoration: none; color: #9AA3AE">контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" style="max-width: 1120px; margin: 0 auto; padding: 0 24px">
+    <section style="padding: 88px 0 80px; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 48px 64px">
+     <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA3AE"><span style="color: #F5A524">$</span> whoami</div>
+      <h1 style="margin: 0; font-size: clamp(44px, 7vw, 84px); line-height: 1.02; font-weight: 600; letter-spacing: -0.02em">Константин<br>Ушаков</h1>
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: clamp(16px, 2vw, 20px); color: #F5A524">Руководитель разработки на Битрикс24 · Алеан</p>
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA3AE">Уфа · удалённо</p>
+      <p style="margin: 0; max-width: 720px; font-size: 20px; color: #C4CAD2">Отвечаю за продуктовую разработку на платформе Битрикс — от постановки задач и архитектуры до управления командами и запуска решений.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+        <a href="https://t.me/makedev" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: #F5A524; color: #0F1115; font-weight: 600; text-decoration: none; border-radius: 6px">Написать в Telegram</a>
+        <a href="cv.pdf" download="Ushakov_Konstantin_CV.pdf" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border: 1px solid #3A424D; color: #E8EAED; text-decoration: none; border-radius: 6px">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M5 21h14"></path></svg>
+          Скачать CV (PDF)
+        </a>
+      </div>
+     </div>
+      <img src="photo.jpg" alt="Константин Ушаков" style="flex: 0 0 auto; width: min(360px, 56vw); aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; border: 1px solid #262C35">
+    </section>
+    <section aria-label="Коротко в цифрах" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 1px solid #262C35; border-bottom: 1px solid #262C35">
+      <div style="padding: 28px 24px 28px 0; display: flex; flex-direction: column; gap: 4px">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 700">с 2010</div>
+        <div style="font-size: 15px; color: #9AA3AE">в разработке на 1С-Битрикс</div>
+      </div>
+      <div style="padding: 28px 24px 28px 0; display: flex; flex-direction: column; gap: 4px">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 700">с 2017</div>
+        <div style="font-size: 15px; color: #9AA3AE">в роли тимлида и руководителя</div>
+      </div>
+      <div style="padding: 28px 24px 28px 0; display: flex; flex-direction: column; gap: 4px">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 700">4</div>
+        <div style="font-size: 15px; color: #9AA3AE">команды разработки сейчас</div>
+      </div>
+      <div style="padding: 28px 24px 28px 0; display: flex; flex-direction: column; gap: 4px">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 700">13</div>
+        <div style="font-size: 15px; color: #9AA3AE">специалистов нанято за полгода в новый офис</div>
+      </div>
+    </section>
+    <section id="experience" style="padding: 88px 0 0; display: flex; flex-direction: column; gap: 32px">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #9AA3AE; text-transform: uppercase; letter-spacing: 0.08em"><span style="color: #F5A524">01</span> / опыт и достижения</h2>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 64px; padding: 32px 0; border-top: 1px solid #262C35">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #F5A524">окт 2024 — сейчас</div>
+          <div style="font-size: 15px; color: #9AA3AE">ООО «Алеан»</div>
+        </div>
+        <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 24px; font-weight: 600">Руководитель разработки продуктов на Битрикс24</h3>
+          <p style="margin: 0; color: #C4CAD2">Руковожу 4 командами разработки на 3 внутренних корпоративных порталах Битрикс24 одного из крупнейших туроператоров страны.</p>
+          <ul style="margin: 0; padding-left: 20px; color: #C4CAD2; display: flex; flex-direction: column; gap: 6px">
+            <li>Запустил пилот агентной разработки (Claude Code, Codex под контролем человека): модель ролей, бриф тимлида, регламент ревью кода агента, общие скиллы через репозиторий, база знаний. По итогам ИИ внедрён в рабочий процесс на уровне отделов разработки, аналитики и тестирования</li>
+            <li>Курировал ускорение портала: замеры, первое на проекте нагрузочное тестирование, новый стенд; нашёл и устранил час-пик в обработке обращений и ежечасные скачки CPU на проде</li>
+            <li>Внедрил логирование и метрики в процесс разработки</li>
+            <li>Провёл обновления B2C- и B2B-контуров, интеграцию телефонии Mango Office с CRM отдельным микросервисом</li>
+            <li>Портал стал рабочим инструментом бизнеса — в нём ведут коммуникацию и работу с обращениями</li>
+          </ul>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 64px; padding: 32px 0; border-top: 1px solid #262C35">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA3AE">сен 2023 — окт 2024</div>
+          <div style="font-size: 15px; color: #9AA3AE">Фриланс / независимые проекты</div>
+        </div>
+        <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 24px; font-weight: 600">Консалтинг и разработка на Битрикс / Битрикс24</h3>
+          <p style="margin: 0; color: #C4CAD2">Вёл проектную деятельность: консалтинг и разработка решений на платформе Битрикс / Битрикс24 для нескольких заказчиков.</p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 64px; padding: 32px 0; border-top: 1px solid #262C35">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA3AE">апр 2021 — сен 2023</div>
+          <div style="font-size: 15px; color: #9AA3AE">ООО ЦИТ «Факт»</div>
+        </div>
+        <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 24px; font-weight: 600">Технический руководитель проектов, руководитель уфимского офиса</h3>
+          <p style="margin: 0; color: #C4CAD2">Открыл офис компании в Уфе с нуля и за полгода набрал команду из 13 специалистов. Одновременно был техническим руководителем на нескольких проектах.</p>
+          <ul style="margin: 0; padding-left: 20px; color: #C4CAD2; display: flex; flex-direction: column; gap: 6px">
+            <li>Спроектировал и реализовал (совместно с 1С-подрядчиком) интеграцию Битрикс24 с 1С:УПП и 16 базами 1С:Управление торговлей 11 для крупного оптово-розничного продавца керамической плитки — обмен заказами, счетами, оплатами</li>
+            <li>Реализовал интеграцию с более чем 6 системами TIBCO (внутренняя система, модули HR и документооборота)</li>
+            <li>Решил задачу AD/NTLM-авторизации с распределением сотрудников и департаментов со схожими названиями по филиалам</li>
+            <li>Связал CRM Битрикс24 со сторонними системами и телефонией Avaya, которую платформа нативно не поддерживает</li>
+          </ul>
+          <details style="color: #9AA3AE; font-size: 15px">
+            <summary style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #F5A524; min-height: 44px; display: flex; align-items: center">+ ещё о роли</summary>
+            <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
+              <li>Проектировал UML-диаграммы и схемы развёртывания под сложную инфраструктуру заказчиков, включая брокеры сообщений</li>
+              <li>Участвовал в разработке микросервиса на Laravel + RabbitMQ</li>
+              <li>Руководил несколькими командами одновременно, проводил код-ревью и прививал правильные архитектурные практики</li>
+              <li>Вёл собеседования, менторил специалистов от junior до senior, решал конфликты внутри команды</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 64px; padding: 32px 0; border-top: 1px solid #262C35">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA3AE">июл 2018 — апр 2021</div>
+          <div style="font-size: 15px; color: #9AA3AE">ООО «СНЕГ»</div>
+        </div>
+        <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 24px; font-weight: 600">Руководитель отдела разработки</h3>
+          <p style="margin: 0; color: #C4CAD2">Руководил проектами на «1С-Битрикс: Управление сайтом» и «1С-Битрикс: Корпоративный портал», а также разработкой приложений для маркетплейса Битрикс24.</p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 64px; padding: 32px 0; border-top: 1px solid #262C35">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA3AE">июл 2017 — июл 2018</div>
+          <div style="font-size: 15px; color: #9AA3AE">Страховой брокер Сбербанка и другие проекты</div>
+        </div>
+        <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 24px; font-weight: 600">Ведущий разработчик, руководитель группы разработки</h3>
+          <p style="margin: 0; color: #C4CAD2">Главный архитектор CRM-подсистемы и личных кабинетов для страхового брокера Сбербанка — корпоративный портал на «1С-Битрикс» с полным циклом CRM: сделки по каналам продаж, котировки, КП, карточки клиентов, планы продаж, взаиморасчёты, интеграция «Казначейства» с «Планированием и бюджетированием» и MS Exchange.</p>
+          <details style="color: #9AA3AE; font-size: 15px">
+            <summary style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #F5A524; min-height: 44px; display: flex; align-items: center">+ другие проекты периода</summary>
+            <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
+              <li>«Стройка+» — социальная сеть для строителей с карточками объектов, финансовыми документами и фотоотчётами</li>
+              <li>ГК «Эталон», Ленспецстрой — портал недвижимости с интеграцией внутренней СУБД</li>
+              <li>Проекты для банка Тинькофф и агентства недвижимости МИЭЛЬ</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 64px; padding: 32px 0; border-top: 1px solid #262C35; border-bottom: 1px solid #262C35">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA3AE">дек 2010 — июл 2017</div>
+          <div style="font-size: 15px; color: #9AA3AE">ООО «Райнет», ООО «Урал Индустрия»</div>
+        </div>
+        <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 24px; font-weight: 600">Разработчик на CMS «1С-Битрикс»</h3>
+          <ul style="margin: 0; padding-left: 20px; color: #C4CAD2; display: flex; flex-direction: column; gap: 6px">
+            <li>Модули и компоненты на 1С-Битрикс, интеграция дизайна с платформой</li>
+            <li>Обмен данными между базами 1С и сайтами</li>
+            <li>Вёрстка и интеграция с «Битрикс», Joomla, WordPress; поддержка серверов на UNIX</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <section id="skills" style="padding: 88px 0 0; display: flex; flex-direction: column; gap: 32px">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #9AA3AE; text-transform: uppercase; letter-spacing: 0.08em"><span style="color: #F5A524">02</span> / навыки и экспертиза</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: #262C35; border: 1px solid #262C35">
+        <div style="background: #0F1115; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+                    <h3 style="margin: 0; font-size: 20px; font-weight: 600">Платформа</h3>
+          <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #C4CAD2; display: flex; flex-direction: column; gap: 4px">
+            <li>1С-Битрикс: Управление сайтом</li>
+            <li>Битрикс24 (коробочная версия)</li>
+            <li>Приложения для маркетплейса Битрикс24</li>
+          </ul>
+        </div>
+        <div style="background: #0F1115; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+                    <h3 style="margin: 0; font-size: 20px; font-weight: 600">Управление</h3>
+          <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #C4CAD2; display: flex; flex-direction: column; gap: 4px">
+            <li>Управление продуктовой разработкой</li>
+            <li>Управление командой и найм</li>
+            <li>Код-ревью и архитектурная экспертиза</li>
+            <li>Менторство</li>
+          </ul>
+        </div>
+        <div style="background: #0F1115; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+                    <h3 style="margin: 0; font-size: 20px; font-weight: 600">ИИ в работе</h3>
+          <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #C4CAD2; display: flex; flex-direction: column; gap: 4px">
+            <li>Пилот агентной разработки в продуктовой команде</li>
+            <li>Регламент ревью кода, написанного агентом</li>
+            <li>Командные скиллы и единый AGENTS.md для Claude Code и Codex</li>
+            <li>Обоснование бюджета и метрик ускорения для руководства</li>
+          </ul>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 14px">
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">Битрикс24</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">интеграции с 1С</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">Laravel</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">RabbitMQ</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">PostgreSQL</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">Redis</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">Docker</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">GitLab CI</span>
+        <span style="padding: 6px 12px; border: 1px solid #3A424D; border-radius: 4px; color: #C4CAD2">Claude Code / Codex</span>
+      </div>
+    </section>
+    <section id="contacts" style="margin: 88px 0 0; padding: 48px; border: 1px solid #262C35; border-radius: 8px; display: flex; flex-direction: column; gap: 28px; background: #151920">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 600">Контакты</h2>
+        <p style="margin: 0; color: #C4CAD2; max-width: 560px">Быстрее всего — в Telegram.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 15px">
+        <a href="https://t.me/makedev" style="display: flex; flex-direction: column; gap: 2px; min-height: 44px; padding: 16px 18px; border: 1px solid #3A424D; border-radius: 6px; text-decoration: none"><span style="font-size: 12px; color: #9AA3AE">telegram</span>@makedev</a>
+        <a href="mailto:info@makedev.ru" style="display: flex; flex-direction: column; gap: 2px; min-height: 44px; padding: 16px 18px; border: 1px solid #3A424D; border-radius: 6px; text-decoration: none"><span style="font-size: 12px; color: #9AA3AE">email</span>info@makedev.ru</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="max-width: 1120px; margin: 0 auto; padding: 48px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA3AE">
+    <span>© 2026 Константин Ушаков · makedev.ru</span>
+  </footer>
+</div>
+</body>
+</html>
