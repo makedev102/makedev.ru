@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности — ExchangeConnector</title>
+<meta name="description" content="Как ExchangeConnector обращается к данным Google Calendar: какой scope запрашивается, что записывается в календарь и как отозвать доступ.">
+<link rel="canonical" href="https://makedev.ru/exchange-connector/privacy">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230F1115'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%23F5A524'%3E~/%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0F1115">
+<link rel="stylesheet" href="/exchange-connector/site.css">
+</head>
+<body>
+  <div class="bar">
+    <a href="https://makedev.ru/"><span class="mark">~/</span>makedev.ru</a>
+    <nav>
+      <a href="https://makedev.ru/exchange-connector/">ExchangeConnector</a>
+      <a href="https://makedev.ru/exchange-connector/privacy">политика</a>
+      <a href="https://makedev.ru/exchange-connector/terms">условия</a>
+      <a href="mailto:info@makedev.ru">email</a>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Политика конфиденциальности</h1>
+    <p class="kicker">ExchangeConnector</p>
+    <p class="lead">Дата: 10 ноября 2026. Программа работает на компьютере пользователя и обращается к Google Calendar только так, как описано ниже.</p>
+
+    <section>
+      <h2>Кто отвечает</h2>
+      <p>Константин Ушаков, <a href="mailto:info@makedev.ru">info@makedev.ru</a>, сайт <a href="https://makedev.ru/">https://makedev.ru/</a>. Отдельной компании-оператора и сервера приложения нет.</p>
+    </section>
+
+    <section>
+      <h2>Какие данные Google запрашиваются</h2>
+      <p>Единственный scope:</p>
+      <p><code>https://www.googleapis.com/auth/calendar.app.created</code></p>
+      <p>Он позволяет видеть, создавать, изменять и удалять календари, которые создало это приложение, и события в них. Список остальных календарей аккаунта, основной календарь и чужие события этот scope не открывает.</p>
+      <p>При входе Google возвращает refresh token. Программа сохраняет на компьютере пользователя только его. Access token не записывается. Код авторизации принимается локально на <code>127.0.0.1</code> и на сервер разработчика не уходит.</p>
+    </section>
+
+    <section>
+      <h2>Как используются данные Google</h2>
+      <p>Данные нужны только для одной функции, которую запускает сам пользователь: держать в его аккаунте Google копию рабочего календаря.</p>
+      <ul>
+        <li>Программа создаёт вторичный календарь «Рабочий календарь», если его ещё нет, и запоминает его идентификатор локально.</li>
+        <li>В этот календарь записываются название, начало, конец и признак занятости встречи из Exchange.</li>
+        <li>К событию добавляются закрытые свойства <code>tcbSource=exchange</code> и <code>tcbSyncKey</code>. Они нужны, чтобы узнавать свои события и не менять остальные.</li>
+        <li>Перед изменением или удалением программа читает событие и проверяет метку. Без метки событие не меняется.</li>
+        <li>Если встреча пропала из текущего окна Exchange, а её прежний интервал это окно ещё пересекает, копия в Google удаляется. Встреча, которая просто ушла в прошлое за границу окна, в Google остаётся.</li>
+      </ul>
+      <p>Описание, участники, организатор, место, вложения, ссылки на созвоны и напоминания в Google не отправляются. Публичная ссылка и общий доступ к календарю не создаются.</p>
+      <p>Данные Google не продаются, не передаются рекламным или аналитическим службам и не используются для рекламы. Разработчик не получает содержимое календаря и не читает его на своей стороне: запросы идут с компьютера пользователя в Google Calendar API.</p>
+    </section>
+
+    <section>
+      <h2>Что читается из Exchange</h2>
+      <p>Источник — календарь Exchange, к которому пользователь сам подключает программу. Читаются только папка календаря и события в окне 7 дней назад и 60 дней вперёд. Из события берутся название, время, признак «весь день», занятость и идентификаторы, нужные для сопоставления повторений. Пароль Exchange спрашивается локально и хранится в Windows Credential Manager. В Google он не отправляется. Запись в Exchange не выполняется.</p>
+    </section>
+
+    <section>
+      <h2>Где это хранится</h2>
+      <ul>
+        <li>Копия встреч — в календаре Google пользователя.</li>
+        <li>Refresh token и пароль Exchange — в Windows Credential Manager, служба <code>exchange-gcal-bridge</code>, на том же компьютере.</li>
+        <li>Локальный файл состояния хранит идентификатор календаря, идентификатор события Google, служебный ключ, интервал и хеш содержимого. Текст названия в этот файл не пишется. Хеш считается от названия, времени, признака «весь день» и занятости, чтобы заметить изменение.</li>
+        <li>Файл клиента OAuth лежит рядом с локальным конфигом и используется только для входа в Google.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Как долго хранится</h2>
+      <p>События остаются в календаре Google, пока их не удалит синхронизация по правилу выше или сам пользователь. Refresh token хранится, пока пользователь не удалит его из Windows Credential Manager или не отзовёт доступ в Google. Локальный хеш хранится, пока существует файл состояния.</p>
+    </section>
+
+    <section>
+      <h2>Как отозвать доступ и удалить данные</h2>
+      <ul>
+        <li>Отозвать доступ приложения: <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>. После отзыва программа теряет возможность читать и менять свой календарь. Уже созданный календарь и события остаются в аккаунте, пока пользователь их не удалит.</li>
+        <li>Удалить копию встреч: удалить календарь «Рабочий календарь» в Google Calendar.</li>
+        <li>Удалить локальные секреты: убрать учётные данные службы <code>exchange-gcal-bridge</code> в диспетчере учётных данных Windows и удалить каталог <code>%LOCALAPPDATA%\exchange-gcal-bridge</code>.</li>
+      </ul>
+      <p>Запрос об удалении можно также отправить на <a href="mailto:info@makedev.ru">info@makedev.ru</a>. На стороне разработчика копии календаря нет, поэтому удаление содержимого выполняется в аккаунте Google и на компьютере пользователя.</p>
+    </section>
+
+    <section>
+      <h2>Изменения</h2>
+      <p>Новая редакция заменяет эту страницу по тому же адресу. Дата в начале страницы — дата действующей редакции.</p>
+      <p>Условия использования: <a href="https://makedev.ru/exchange-connector/terms">https://makedev.ru/exchange-connector/terms</a></p>
+    </section>
+
+    <section lang="en">
+      <h2>English</h2>
+      <p>Effective 10 November 2026. ExchangeConnector is operated by Konstantin Ushakov, <a href="mailto:info@makedev.ru">info@makedev.ru</a>. There is no application server.</p>
+      <p>The app requests one Google scope, <code>https://www.googleapis.com/auth/calendar.app.created</code>. It creates a secondary calendar named “Рабочий календарь” in the user’s Google account and writes only the event title, start, end, free/busy status, and two private sync properties (<code>tcbSource</code>, <code>tcbSyncKey</code>). It does not copy descriptions, attendees, locations, or attachments, does not read or modify calendars created by anyone else, and does not share the calendar. Before an update or delete, it reads the event and checks the private marker. Unmarked events are left untouched.</p>
+      <p>Google user data is used only to keep that personal calendar copy. It is not sold, not used for advertising, and not sent to the developer. The refresh token is stored only in Windows Credential Manager on the user’s computer. A local state file stores calendar and event ids, a sync key, the event interval, and a hash of the copied fields. The event title is not written to that file. The Exchange password is also stored locally and is never sent to Google.</p>
+      <p>Revoke access at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>. Delete the copied events by deleting the “Рабочий календарь” calendar in Google Calendar. Delete local secrets by removing the <code>exchange-gcal-bridge</code> credentials in Windows Credential Manager and the <code>%LOCALAPPDATA%\exchange-gcal-bridge</code> folder. The developer does not hold a copy of the calendar and cannot delete it remotely.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Константин Ушаков · <a href="https://makedev.ru/exchange-connector/">ExchangeConnector</a></footer>
+</body>
+</html>

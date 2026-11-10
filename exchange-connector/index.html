@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExchangeConnector</title>
+<meta name="description" content="ExchangeConnector — локальная программа для одного пользователя. Копирует название, время и занятость встреч из календаря Exchange в отдельный календарь Google.">
+<link rel="canonical" href="https://makedev.ru/exchange-connector/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230F1115'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%23F5A524'%3E~/%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0F1115">
+<link rel="stylesheet" href="/exchange-connector/site.css">
+</head>
+<body>
+  <div class="bar">
+    <a href="https://makedev.ru/"><span class="mark">~/</span>makedev.ru</a>
+    <nav>
+      <a href="https://makedev.ru/exchange-connector/">ExchangeConnector</a>
+      <a href="https://makedev.ru/exchange-connector/privacy">политика</a>
+      <a href="https://makedev.ru/exchange-connector/terms">условия</a>
+      <a href="mailto:info@makedev.ru">email</a>
+    </nav>
+  </div>
+
+  <main>
+    <h1>ExchangeConnector</h1>
+    <p class="kicker">Локальная программа · один пользователь</p>
+    <p class="lead">ExchangeConnector читает календарь Exchange на компьютере владельца и копирует встречи в отдельный календарь Google «Рабочий календарь». Этот календарь создаёт само приложение. Основной календарь Google оно не читает и не меняет.</p>
+
+    <section>
+      <h2>Что копируется</h2>
+      <ul>
+        <li>Название встречи.</li>
+        <li>Начало и конец. Событие на весь день передаётся датами, без перевода в другой часовой пояс.</li>
+        <li>Признак занятости: свободное время или занятое.</li>
+        <li>Две служебные метки, видимые только приложению: источник <code>exchange</code> и ключ синхронизации.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Что не копируется</h2>
+      <ul>
+        <li>Описание, участники, организатор, место, вложения и ссылки на видеовстречи.</li>
+        <li>Напоминания и настройки гостей.</li>
+        <li>Любой календарь Google, который создало не это приложение.</li>
+      </ul>
+      <p>Запись в Exchange нет. Программа только читает календарь и только окно: 7 дней назад и 60 дней вперёд. Общий доступ к календарю Google не создаётся.</p>
+    </section>
+
+    <section>
+      <h2>Доступ Google</h2>
+      <p>Приложение запрашивает один scope:</p>
+      <p><code>https://www.googleapis.com/auth/calendar.app.created</code></p>
+      <p>Этого доступа достаточно, чтобы создать календарь «Рабочий календарь» и создавать, обновлять и удалять в нём свои события. Перед изменением или удалением программа читает событие и проверяет служебную метку. Событие без метки она не трогает.</p>
+      <p>Вход выполняется в браузере на этом же компьютере, код возврата принимается только на <code>127.0.0.1</code>. Refresh token хранится локально в Windows Credential Manager. На сервер разработчика календарь не отправляется: у программы нет такого сервера.</p>
+    </section>
+
+    <section>
+      <h2>Документы</h2>
+      <ul class="doc-links">
+        <li>
+          <a href="https://makedev.ru/exchange-connector/privacy">Политика конфиденциальности</a><br>
+          <span class="url">https://makedev.ru/exchange-connector/privacy</span>
+        </li>
+        <li>
+          <a href="https://makedev.ru/exchange-connector/terms">Условия использования</a><br>
+          <span class="url">https://makedev.ru/exchange-connector/terms</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Контакт</h2>
+      <p>Константин Ушаков, <a href="mailto:info@makedev.ru">info@makedev.ru</a>.</p>
+    </section>
+
+    <section lang="en">
+      <h2>English</h2>
+      <p>ExchangeConnector is a local program for a single user. It reads that user’s Exchange calendar and copies events into a separate Google calendar named “Рабочий календарь”, which the app creates in the user’s own Google account. The copy contains the title, start, end, and free/busy status, plus two private sync labels. Descriptions, attendees, locations, and attachments are not copied. The app does not read or change the primary Google calendar or any calendar it did not create, and it does not share the new calendar.</p>
+      <p>The only requested scope is <code>https://www.googleapis.com/auth/calendar.app.created</code>. The refresh token stays in Windows Credential Manager on the user’s computer. The developer has no server that receives calendar contents.</p>
+      <p>Privacy policy: <a href="https://makedev.ru/exchange-connector/privacy">https://makedev.ru/exchange-connector/privacy</a><br>
+      Terms of service: <a href="https://makedev.ru/exchange-connector/terms">https://makedev.ru/exchange-connector/terms</a><br>
+      Contact: <a href="mailto:info@makedev.ru">info@makedev.ru</a></p>
+    </section>
+  </main>
+
+  <footer>© 2026 Константин Ушаков · ExchangeConnector</footer>
+</body>
+</html>

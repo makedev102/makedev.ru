@@ -1,0 +1,83 @@
+@font-face{font-family:'IBM Plex Sans';font-weight:400;font-display:swap;src:url(/fonts/ibm-plex-sans-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'IBM Plex Sans';font-weight:400;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans';font-weight:500;font-display:swap;src:url(/fonts/ibm-plex-sans-cyrillic-500-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'IBM Plex Sans';font-weight:500;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;font-display:swap;src:url(/fonts/ibm-plex-sans-cyrillic-600-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'JetBrains Mono';font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-cyrillic-500-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'JetBrains Mono';font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #0F1115;
+  color: #E8EAED;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+a { color: #E8EAED; }
+a:hover { color: #FFFFFF; }
+.bar {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  border-bottom: 1px solid #262C35;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+.bar nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.bar a { text-decoration: none; color: #9AA3AE; }
+.bar a:hover { color: #FFFFFF; }
+.mark { color: #F5A524; }
+main { max-width: 720px; margin: 0 auto; padding: 72px 24px 0; }
+h1 {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.kicker {
+  margin: 18px 0 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  color: #F5A524;
+}
+.lead { margin: 22px 0 0; font-size: 19px; color: #C4CAD2; }
+h2 {
+  margin: 0 0 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #9AA3AE;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+section { margin-top: 36px; padding-top: 28px; border-top: 1px solid #262C35; }
+p, li { color: #E8EAED; }
+ul, ol { margin: 0; padding-left: 1.25em; }
+li + li { margin-top: 8px; }
+code, .url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86em;
+  color: #F5A524;
+  word-break: break-all;
+}
+.doc-links { display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.doc-links a { text-underline-offset: 4px; }
+.muted { color: #9AA3AE; }
+footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #9AA3AE;
+}
